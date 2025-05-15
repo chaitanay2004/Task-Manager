@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 40px;
+    padding: 0;
+    background-color: #121212; /* Black Background */
+    color: white;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff8c00; /* Orange */
+}
+
+/* Logout Button */
+.logout-btn {
+    background: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* Task Form */
+.task-form {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+.task-form h3 {
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+.task-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: white;
+}
+
+.task-form input::placeholder {
+    color: #bbb;
+}
+
+.task-form button {
+    background: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-form button:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* Task Submissions Section */
+#submissionsList {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+/* Section Heading */
+h3 {
+    color: #ff8c00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Submission Grid */
+#submissionsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 20px;
+}
+
+/* Individual Submission */
+.submission {
+    border: 2px solid #ff8c00;
+    padding: 15px;
+    border-radius: 8px;
+    background: #2a2a2a;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.submission:hover {
+    transform: translateY(-5px);
+}
+
+/* Submission Buttons */
+.submission button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.approve-btn {
+    background: #28a745;
+    color: white;
+}
+
+.reject-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.submission button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* User Management Section */
+.user-management {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.user-management h3 {
+    color: #ff8c00;
+    margin-bottom: 15px;
+}
+
+/* Add User Button */
+.add-user-btn {
+    background: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+#newUserRole{
+    background: #121212;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 8px;
+}
+
+.add-user-btn:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* User Form */
+.user-form {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #2a2a2a;
+    display: none;
+    text-align: center;
+}
+
+.user-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    background: #121212;
+    color: white;
+}
+
+.user-form input::placeholder {
+    color: #bbb;
+}
+
+/* Create User Button */
+#createUserBtn {
+    background: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+#createUserBtn:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+
+/* Smooth animations */
+* {
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contactApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-container {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff8c00;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ff8c00;
+            border-radius: 8px;
+            background: #2a2a2a;
+            color: white;
+            font-size: 16px;
+            resize: none;
+            text-align: center;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #bbb;
+        }
+
+        button {
+            width: 100%;
+            background: #ff8c00;
+            color: #121212;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #e67600;
+            transform: scale(1.05);
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #90ee90;
+        }
+
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body ng-controller="ContactController">
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form ng-submit="submitQuery()">
+            <input type="text" ng-model="contact.name" placeholder="Your Name" required><br>
+            <input type="email" ng-model="contact.email" placeholder="Your Email" required><br>
+            <textarea ng-model="contact.message" placeholder="Your Message" rows="5" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p>{{responseMsg}}</p>
+    </div>
+
+    <script>
+        const app = angular.module('contactApp', []);
+        app.controller('ContactController', function ($scope) {
+            $scope.contact = {};
+            $scope.responseMsg = "";
+
+            $scope.submitQuery = function () {
+                $.ajax({
+                    url: 'http://localhost:5000/api/contact',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify($scope.contact),
+                    success: function (response) {
+                        $scope.$apply(() => {
+                            $scope.responseMsg = "✅ Query submitted successfully!";
+                            $scope.contact = {};
+                        });
+                    },
+                    error: function (err) {
+                        $scope.$apply(() => {
+                            $scope.responseMsg = "❌ Error submitting query.";
+                        });
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+
+</html>

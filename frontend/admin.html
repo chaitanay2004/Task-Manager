@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2>Admin Panel</h2>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+
+    <!-- Add User Section -->
+    <div class="user-management">
+        <h3>Account Management</h3>
+        <button id="addUserBtn" class="add-user-btn">Add User</button>
+        <div id="userForm" class="user-form" style="display: none;">
+            <input type="text" id="newUsername" placeholder="Enter Username">
+            <input type="text" id="newUserDomain" placeholder="Enter Domain">
+            <input type="password" id="newUserPassword" placeholder="Enter Password">
+            <select id="newUserRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button id="createUserBtn">Create User</button>
+        </div>
+    </div>
+
+    <!-- Task Creation Form -->
+    <div class="task-form">
+        <h3>Create Task</h3>
+        <input type="text" id="taskDomain" placeholder="Enter Domain">
+        <input type="text" id="taskDescription" placeholder="Task Description">
+        <input type="date" id="taskDeadline">
+        <button onclick="createTask()">Create Task</button>
+    </div>
+
+    <!-- Task Submissions -->
+    <h3>Task Submissions</h3>
+    <div id="submissionsList"></div>
+
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

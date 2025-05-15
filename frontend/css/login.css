@@ -1,0 +1,98 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    /* Black Background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+    text-align: center;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading */
+.login-container h2 {
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ff8c00;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    /* Center text inside inputs */
+}
+
+/* Placeholder Text */
+.login-container input::placeholder {
+    color: #bbb;
+}
+
+/* Login Button */
+.login-container button {
+    width: 100%;
+    background: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.login-container button:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* Smooth Animations */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff8c00;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+    z-index: 1000;
+}
+
+.contact-button:hover {
+    background-color: #e67600;
+    transform: scale(1.05);
+}
